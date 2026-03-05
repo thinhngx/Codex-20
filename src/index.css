@@ -9,7 +9,12 @@
   }
 }
 
+@property --gradient-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
 @keyframes gradient-spin {
-  from { transform: scale(1.5) rotate(0deg); }
-  to   { transform: scale(1.5) rotate(360deg); }
+  to { --gradient-angle: 360deg; }
 }
