@@ -55,14 +55,16 @@ export default function HeroSection() {
 
         <div className="flex items-start gap-[7px] w-full">
           {cards.map(({ angle }, i) => (
-            <div
-              key={i}
-              className="flex-1 h-[233px] rounded-sm"
-              style={{
-                backgroundImage: `conic-gradient(in oklab from ${angle} at 50% 50%, oklab(53.5% -0.023 -0.257) 0%, oklab(85.2% 0 -0.0001) 100%)`,
-                filter: 'hue-rotate(90deg)',
-              }}
-            />
+            <div key={i} className="flex-1 h-[233px] rounded-sm overflow-hidden relative">
+              <div
+                className="absolute inset-0 scale-[1.5]"
+                style={{
+                  backgroundImage: `conic-gradient(in oklab from ${angle} at 50% 50%, oklab(53.5% -0.023 -0.257) 0%, oklab(85.2% 0 -0.0001) 100%)`,
+                  filter: 'hue-rotate(90deg)',
+                  animation: 'gradient-spin 6s linear infinite',
+                }}
+              />
+            </div>
           ))}
         </div>
       </div>
